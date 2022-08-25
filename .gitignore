@@ -13,3 +13,30 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# Python files ignore
+.idea/*
+*.pyc
+db.sqlite3
+.DS_Store
+__pycache__
+/bak/
+/download/
+build/
+dist/
+*.egg-info/
+__MACOSX/
+data/*
+logs/*
+.vscode
+venv/*
+.ipynb_checkpoints
+*.ipynb
+*.ps1
+*.coverage
+testcase/*.png
+*.html
+*.xhtml
+.dockerignore
+Dockerfile
+run.sh
