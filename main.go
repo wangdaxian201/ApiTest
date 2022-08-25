@@ -1,11 +1,15 @@
 package main
 
 import (
-	"ApiTest/help"
+	"ApiTest/Usage"
+	"flag"
 	"fmt"
 )
 
 func main() {
-	fmt.Println("start code api test tool")
-	help.Init()
+	flag.Parse()
+	fmt.Println(Usage.Option)
+	if Usage.Help {
+		flag.Usage()
+	}
 }
