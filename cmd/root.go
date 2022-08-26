@@ -1,4 +1,4 @@
-package Usage
+package cmd
 
 import (
 	"flag"
@@ -24,7 +24,7 @@ func init() {
 
 func usage() {
 	fmt.Fprintf(os.Stderr, `ApiTest version: ApiTest/0.1.0
-Usage: ApiTest [options...] <url>
+cmd: ApiTest [options...] <url>
 Options:
 `)
 	flag.PrintDefaults()

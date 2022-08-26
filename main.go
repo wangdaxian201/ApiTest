@@ -1,15 +1,15 @@
 package main
 
 import (
-	"ApiTest/Usage"
+	"apitest/cmd"
 	"flag"
 	"fmt"
 )
 
 func main() {
 	flag.Parse()
-	fmt.Println(Usage.Option)
-	if Usage.Help {
+	fmt.Println()
+	if cmd.Help {
 		flag.Usage()
 	}
 }

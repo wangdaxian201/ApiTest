@@ -1,3 +1,3 @@
-module ApiTest
+module apitest
 
 go 1.19
