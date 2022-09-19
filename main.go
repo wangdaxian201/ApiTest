@@ -1,15 +1,11 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import (
-	"apitest/cmd"
-	"flag"
-	"fmt"
-)
+import "apitest/cmd"
 
 func main() {
-	flag.Parse()
-	fmt.Println()
-	if cmd.Help {
-		flag.Usage()
-	}
+	cmd.Execute()
 }

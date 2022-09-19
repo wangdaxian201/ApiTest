@@ -1,31 +1,49 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+*/
 package cmd
 
 import (
-	"flag"
 	"fmt"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
-var (
-	Help      bool
-	Url       string
-	Option    string
-	Header    string
-	UserAgent string
-)
-
-func init() {
-	flag.BoolVar(&Help, "h", false, "this `help`")
-	flag.StringVar(&Url, "u", "", "`Url`")
-	flag.StringVar(&Option, "o", "", "`Option` 是你要请求的方式 ")
-	flag.StringVar(&Header, "header", "", "`header` 请求头")
-	flag.Usage = usage
+// rootCmd represents the base command when called without any subcommands
+var rootCmd = &cobra.Command{
+	Use:   "apitest",
+	Short: "A brief description of your application",
+	Long:  `ApiTest is Test tools`,
+	// Uncomment the following line if your bare application
+	// has an action associated with it:
+	// Run: func(cmd *cobra.Command, args []string) { },
+	Version: "1.1",
 }
 
-func usage() {
-	fmt.Fprintf(os.Stderr, `ApiTest version: ApiTest/0.1.0
-cmd: ApiTest [options...] <url>
-Options:
-`)
-	flag.PrintDefaults()
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
+var msg string
+
+func Execute() {
+	err := rootCmd.Execute()
+	if err != nil {
+		os.Exit(1)
+	}
+	fmt.Println(msg)
+}
+
+func init() {
+	// Here you will define your flags and configuration settings.
+	// Cobra supports persistent flags, which, if defined here,
+	// will be global for your application.
+
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.apitest.yaml)")
+
+	// Cobra also supports local flags, which will only run
+	// when this action is called directly.
+
+	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	rootCmd.Flags().StringVar(&msg, "msg", "", "`msg` is msg")
+
 }
